@@ -9,7 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var Update: Timer?
+    
+    @IBAction func Update(_ sender: AnyObject) {
+        Update = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ViewController.whileRunning), userInfo: nil, repeats: true)
+    }
+    
+    func whileRunning(){
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

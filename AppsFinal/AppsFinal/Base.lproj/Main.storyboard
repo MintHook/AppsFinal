@@ -122,7 +122,7 @@
         <!--View Controller-->
         <scene sceneID="n3B-KK-WxO">
             <objects>
-                <viewController id="BA1-rq-Skk" sceneMemberID="viewController">
+                <viewController id="BA1-rq-Skk" customClass="ViewController" customModule="AppsFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PdG-ZI-3lK"/>
                         <viewControllerLayoutGuide type="bottom" id="wJz-2h-gmw"/>
@@ -135,6 +135,9 @@
                                 <frame key="frameInset" minX="318" minY="617" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="Update:" destination="BA1-rq-Skk" eventType="touchUpInside" id="52X-hy-1TA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-7z-syb">
                                 <frame key="frameInset" minX="16" minY="617" width="294" height="30"/>
