@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     var Update: Timer?
     
+    @IBOutlet weak var text: UITextView!
+    
     @IBAction func Update(_ sender: AnyObject) {
         Update = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ViewController.whileRunning), userInfo: nil, repeats: true)
     }
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        text.text = ""
         // Do any additional setup after loading the view, typically from a nib.
     }
 
