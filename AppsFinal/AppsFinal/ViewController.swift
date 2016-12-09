@@ -43,13 +43,12 @@ class ViewController: UIViewController {
                 let text = json["data"].arrayValue
                 
                 // display only the last task
-                let subject = texts[texts.count - 1]["Username"].string
-                let description = texts[texts.count - 1]["message"].string
-                self.lblSubject.text = Username
-                self.lblDescription.text = message
+                let person = texts[text.count - 1]["Username"].string
+                let text = texts[texts.count - 1]["message"].string
+                self.text.text = "/(Username) : /(message)"
                 
             } else {
-                nil
+                self.text.text = ""
             }
         }
     }
