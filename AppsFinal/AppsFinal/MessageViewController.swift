@@ -12,27 +12,27 @@ import SwiftyJSON
 
 class MessageViewController: UIViewController {
     var Update: Timer?
-    
+    var Username: String?
+    @IBOutlet weak var Welcome: UITextView!
     @IBOutlet weak var message: UITextField!
     @IBOutlet weak var UITextView: UITextView!
     
-    
     @IBAction func Update(_ sender: AnyObject) {
-        let url = "http://localhost:3000/texts"
+        let url = "http://10.10.90.104:3000/texts"
         
         let params: Parameters = [
-            "message" : message.text!
+            "message" : message.text!,
         ]
         
         Alamofire.request(url , method: .post, parameters: params, encoding: JSONEncoding.default).responseString { response in
             debugPrint(response)
         }
         
-        Update = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MessageViewController.getButton), userInfo: nil, repeats: true)
+        Update = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MessageViewController.getButton), userInfo: nil, repeats: false)
     }
     
     func getButton(){
-        let geturl = "http://localhost:3000/texts"
+        let geturl = "http://10.10.90.104:3000/texts"
         
         Alamofire.request(geturl , method: .get, encoding: JSONEncoding(options: [])).responseJSON { response in
             debugPrint(response)
@@ -42,19 +42,18 @@ class MessageViewController: UIViewController {
                 let text = json["data"].arrayValue
                 
                 // display only the last task
-                let person = text[text.count - 1]["Username"].string
                 let message = text[text.count - 1]["message"].string
-                self.UITextView.text = "\(person): \(message)"
-                
+                self.UITextView.text = "\(self.Username): \(message)"
             } else {
-                self.UITextView.text = "/(person) said nothing."
+                self.UITextView.text = ""
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITextView.text = "Welcome!"
+        
+        Welcome.text = "Welcome " + Username! + "."
         // Do any additional setup after loading the view.
     }
 

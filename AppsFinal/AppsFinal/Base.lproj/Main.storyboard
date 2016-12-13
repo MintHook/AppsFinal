@@ -127,7 +127,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ipU-z0-7Id">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ipU-z0-7Id">
+                                <frame key="frameInset" minX="16" minY="55" width="343" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Words To Fill Space." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o3i-aJ-FcI">
+                                <frame key="frameInset" minX="16" minY="20" width="332" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -137,12 +144,15 @@
                         <constraints>
                             <constraint firstItem="y7F-7z-syb" firstAttribute="top" secondItem="ipU-z0-7Id" secondAttribute="bottom" constant="8" id="5Lf-OG-f0j"/>
                             <constraint firstItem="wJz-2h-gmw" firstAttribute="top" secondItem="y7F-7z-syb" secondAttribute="bottom" constant="20" id="80D-E9-bqY"/>
+                            <constraint firstItem="o3i-aJ-FcI" firstAttribute="top" secondItem="PdG-ZI-3lK" secondAttribute="bottom" id="GXd-ih-OYS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ipU-z0-7Id" secondAttribute="leading" id="Gzf-gF-8YG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o3i-aJ-FcI" secondAttribute="trailing" constant="11" id="MH6-xS-3yv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="o3i-aJ-FcI" secondAttribute="leading" id="MPw-jB-ea2"/>
                             <constraint firstItem="wJz-2h-gmw" firstAttribute="top" secondItem="Ed3-UF-aMl" secondAttribute="bottom" constant="20" id="OCH-QR-TdK"/>
                             <constraint firstItem="Ed3-UF-aMl" firstAttribute="leading" secondItem="y7F-7z-syb" secondAttribute="trailing" constant="8" id="aSU-od-D3o"/>
+                            <constraint firstItem="ipU-z0-7Id" firstAttribute="top" secondItem="o3i-aJ-FcI" secondAttribute="bottom" id="g0T-zE-djQ"/>
                             <constraint firstItem="Ed3-UF-aMl" firstAttribute="top" secondItem="ipU-z0-7Id" secondAttribute="bottom" constant="8" id="gk4-mu-byU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ed3-UF-aMl" secondAttribute="trailing" constant="5" id="jkk-Vi-DY4"/>
-                            <constraint firstItem="ipU-z0-7Id" firstAttribute="top" secondItem="PdG-ZI-3lK" secondAttribute="bottom" id="mgg-fw-t6F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipU-z0-7Id" secondAttribute="trailing" id="oLz-z4-bGs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="y7F-7z-syb" secondAttribute="leading" id="roj-9A-Tlh"/>
                             <constraint firstItem="Ed3-UF-aMl" firstAttribute="leading" secondItem="y7F-7z-syb" secondAttribute="trailing" constant="8" id="udo-O5-uVP"/>
@@ -150,12 +160,13 @@
                     </view>
                     <connections>
                         <outlet property="UITextView" destination="ipU-z0-7Id" id="Q4z-JS-pP8"/>
+                        <outlet property="Welcome" destination="o3i-aJ-FcI" id="jRK-wD-amr"/>
                         <outlet property="message" destination="y7F-7z-syb" id="t2R-pQ-g0S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ii6-rT-6nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-171"/>
+            <point key="canvasLocation" x="597.60000000000002" y="-171.36431784107947"/>
         </scene>
     </scenes>
 </document>

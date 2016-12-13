@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Username: UITextField!
     
     @IBAction func btnSend_Tap(_ sender: UIButton) {
-        let url = "http://localhost:3000/task"
+        let url = "http://10.10.90.104:3000/texts"
         
         let params: Parameters = [
             "Username" : Username.text!
@@ -37,6 +37,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?){
+        let second = segue.destination as! MessageViewController
+        second.Username = Username.text
+    }
 }
 
